@@ -16,11 +16,22 @@ project_name = args.project_name
 
 # Create target Directory
 try:
-	os.mkdir("projects/" + project_folder)
-	os.mkdir("projects/" + project_folder + "/placed")
-	print("Directory " , project_folder ,  " Created ")
+	os.mkdir("projects");
+	print("Creating projects folder.")
 except FileExistsError:
-    print("Directory " , project_folder ,  " already exists")
+	print("Projects folder exists.")
+
+try:
+	os.mkdir("projects/" + project_folder)
+	print("Creating folder for " + project_folder + " project")
+except FileExistsError:
+    print("Folder for project " , project_folder ,  " already exists")
+
+try:
+	os.mkdir("projects/" + project_folder + "/placed")
+	print("Placed folder for project " , project_folder ,  " created ")
+except FileExistsError:
+    print("Placed folder for project  " , project_folder ,  " already exists")
 
 
 def run(options: Dict[str, Union[int, float, List[str]]], file_list: List[str], save_file: TextIO, pre_gcode: str, mid_gcode: str, post_gcode: str, output_file_counter=1):
