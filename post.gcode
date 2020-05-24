@@ -1,0 +1,8 @@
+G92 E0
+;M104 S180
+M104 S0 ; Extruder off
+M190 S0 ; Bed off
+M107    ; Fan off
+G1 E-2 F900
+G1 X0 Y163 F3000
+M84
